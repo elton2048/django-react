@@ -1,0 +1,17 @@
+$primary-color: #123456;
+
+.pull-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.songitem {
+    width: 74%;
+}
+
+.react-fine-uploader-gallery-file-input-container {
+    width: inherit;
+}
+span {
+    color: $primary-color;
+}

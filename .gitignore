@@ -1,6 +1,6 @@
 .DS_Store
 *stats.json
-assets/
+bundles/
 static/
 node_modules/
 __pycache__/
