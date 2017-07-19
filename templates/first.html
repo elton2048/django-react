@@ -1,0 +1,22 @@
+{% load react %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load render_bundle from webpack_loader %}
+    </head>
+    <body>
+        <div id='react-app'>
+            {# {% react_render component="Form" props=test %}#}
+        </div>
+        <div id="two"></div>
+        <script type="text/javascript">
+            const test = {{ test|safe }};
+            const options = {{ options|safe }};
+            const status = {{ status|safe }};
+            // options.request.customHeaders = {'X-CSRFToken': '{{ csrf_token }}'};
+        </script>
+        {% render_bundle 'main' %}
+    </body>
+    {% react_print %}
+</html>
