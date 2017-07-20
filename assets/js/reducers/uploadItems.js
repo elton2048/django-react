@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { normalize, schema } from 'normalizr'
+// import { normalize, schema } from 'normalizr'
 import { CREATE_ITEM, DELETE_ITEM } from '../actions'
 
 // const uploadItems = handleActions({

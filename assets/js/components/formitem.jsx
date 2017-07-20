@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import CompositeLegend from './CompositeLegend'
+import Label from './label'
 
 const FormItem = ({ item, index, action }) => {
     return (
         <div>
             <fieldset>
-                <CompositeLegend item={ item } index={ index } action={ action } />
+                <CompositeLegend item={ item } index={ index } />
+                <Label label="Name" />
             </fieldset>
         </div>
     )

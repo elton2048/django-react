@@ -6,17 +6,22 @@ import {
 } from '../actions/'
 // import style from '../styles/legend.scss'
 
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    onDeleteFormItem: () => {
+        dispatch(deleteItem(ownProps.item.id))
+    },
+})
+
 let CompositeLegend = (props) => {
-    console.log(props);
     return (
         <legend className={`initial legendWidth`}>
             <div className={`row`}>
                 <span className={props.delete == "true" ? `col-4` : `col-12`}>
-                    {props.delete == "true" ? `Song #${props.index + 1}` : `${props.title}`}
+                    {props.delete == "true" ? `Song #${props.item.id + 1}` : `${props.title}`}
                 </span>
                 <div className="col-8 pull-right">
                     {props.delete == "true" &&
-                        <input onClick={() => props.action(props.item.id)} id={`button-id-delete-${props.id}`} className="btn btn-danger" name={`delete-${props.id}`} value="Delete" type="button" />
+                        <input onClick={ () => props.onDeleteFormItem() } id={`button-id-delete-${props.id}`} className="btn btn-danger" name={`delete-${props.id}`} value="Delete" type="button" />
                     }
                 </div>
             </div>
@@ -28,4 +33,7 @@ CompositeLegend.defaultProps = {
     delete: "true"
 }
 
-export default CompositeLegend
+export default CompositeLegend = connect(
+    null,
+    mapDispatchToProps
+)(CompositeLegend)

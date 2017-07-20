@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import FormItemList from './FormItemList'
+import FormItemList from '../containers/FormItemList'
 
 const App = () => {
     return (
