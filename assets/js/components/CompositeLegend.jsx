@@ -17,7 +17,7 @@ let CompositeLegend = (props) => {
         <legend className={`initial legendWidth`}>
             <div className={`row`}>
                 <span className={props.delete == "true" ? `col-4` : `col-12`}>
-                    {props.delete == "true" ? `Song #${props.item.id + 1}` : `${props.title}`}
+                    {props.delete == "true" ? `Song #${props.index + 1}` : `${props.title}`}
                 </span>
                 <div className="col-8 pull-right">
                     {props.delete == "true" &&

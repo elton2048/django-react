@@ -50,7 +50,7 @@ let FormItemList = ({
             <fieldset>
                 {
                     items.uploadItems.map((item, index) => (
-                        <FormItem key={ index } item={ item } />
+                        <FormItem key={ index } index={ index } item={ item } />
                     ))
                 }
             </fieldset>

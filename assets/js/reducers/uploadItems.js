@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions'
 // import { normalize, schema } from 'normalizr'
-import { CREATE_ITEM, DELETE_ITEM } from '../actions'
+import { CREATE_ITEM, CHANGE_ITEM, DELETE_ITEM } from '../actions'
 
 // const uploadItems = handleActions({
 //     CREATE_ITEM: (state, { payload }) => {
@@ -26,9 +26,13 @@ const uploadItems = (state = initialState.uploadItems, action) => {
             // return Object.assign({}, state, {})
             return [
                 ...state, {
-                    id: action.id
+                    id: action.id,
+                    text: "",
                 }
             ]
+        case CHANGE_ITEM:
+            state[action.id].text = action.text
+            return state
         case DELETE_ITEM:
             // console.log([...state.slice(0, action.id), ...state.slice(action.id + 1)]);
             // console.log(state.filter(element => element.id != action.id));
