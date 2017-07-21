@@ -9,7 +9,7 @@ import {
 } from '../actions/'
 
 const mapStateToProps = (state) => ({
-    items: state.uploadItems,
+    items: state.uploadItems.get('items'),
     uiReducers: state.uiReducers
 })
 
@@ -35,6 +35,7 @@ let FormItemList = ({
     onDeleteFormItem,
     onAddSongFieldChange
 }) => {
+    console.log(items);
     let input
 
     return (
@@ -49,7 +50,7 @@ let FormItemList = ({
             </div>
             <fieldset>
                 {
-                    items.uploadItems.map((item, index) => (
+                    items.map((item, index) => (
                         <FormItem key={ index } index={ index } item={ item } />
                     ))
                 }

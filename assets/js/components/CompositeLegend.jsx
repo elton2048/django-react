@@ -8,7 +8,8 @@ import {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onDeleteFormItem: () => {
-        dispatch(deleteItem(ownProps.item.id))
+        console.log(ownProps.item.get('id'));
+        dispatch(deleteItem(ownProps.item.get('id')))
     },
 })
 

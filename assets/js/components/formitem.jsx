@@ -8,7 +8,7 @@ import {
 } from '../actions'
 
 const mapStateToProps = (state) => ({
-    items: state.uploadItems,
+    items: state.uploadItems.get('items'),
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -18,13 +18,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
 let FormItem = ({ item, index, action, onChangeFormItem }) => {
+    console.log(item);
     return (
         <div>
             <fieldset>
                 <CompositeLegend item={ item } index={ index } />
                 <Label label="Name" />
                 <div className="col-9">
-                    <input id={`id_form-${index}-name`} className="form-control" onChange={ (e) => onChangeFormItem(e.target.value) } name={`form-${index}-name`} defaultValue={ item.name } value={ item.text } type="text" />
+                    <input id={`id_form-${index}-name`} className="form-control" onChange={ (e) => onChangeFormItem(e.target.value) } name={`form-${index}-name`} defaultValue={ item.get('text') } value={ item.get('text') } type="text" />
                 </div>
             </fieldset>
         </div>
